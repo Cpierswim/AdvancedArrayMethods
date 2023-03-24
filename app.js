@@ -242,6 +242,15 @@ console.log(problemTen());
 
 //8b. Use the filter method to eliminate duplicate from problem 8a.
 
+function problemEightB() {
+  return problemEight().filter(
+    (item, index, self) => self.indexOf(item) == index
+  );
+}
+
+console.log(problemEightB());
+console.log([...new Set(problemEight())]); // same result
+
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
