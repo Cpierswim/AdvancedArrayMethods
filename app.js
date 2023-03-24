@@ -267,4 +267,28 @@ console.log(problemEleven());
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
 
+function problemTwelve() {
+  return dishes.reduce((total, dish) => total + dish.servings, 0);
+}
+
+console.log(problemTwelve());
+
 //13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
+function problemThirteen() {
+  let ingredients = {};
+  dishes.forEach((dish) =>
+    dish.ingredients.forEach((ingredient) =>
+      !ingredients[ingredient]
+        ? (ingredients[ingredient] = 1)
+        : ingredients[ingredient]++
+    )
+  );
+  return dishes.filter(
+    (dish) =>
+      dish.ingredients
+        .map((ingredient) => ingredients[ingredient])
+        .indexOf(1) != -1
+  );
+}
+
+console.log(problemThirteen());
