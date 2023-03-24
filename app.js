@@ -255,6 +255,15 @@ console.log([...new Set(problemEight())]); // same result
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
 
+function problemEleven() {
+  return dishes.filter(
+    (dish) =>
+      dish.ingredients.includes("tomato") || dish.ingredients.includes("cheese")
+  );
+}
+
+console.log(problemEleven());
+
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
 
