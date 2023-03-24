@@ -291,4 +291,16 @@ function problemThirteen() {
   );
 }
 
-console.log(problemThirteen());
+console.log(problemThirteen()); //This one I misread the question and had it return dishes that do not share an ingredient with any other object
+
+function problemThirteenWhatItActuallyAskedFor() {
+  let cuisines = {};
+  dishes.forEach((dish) =>
+    !cuisines[dish.cuisine]
+      ? (cuisines[dish.cuisine] = 1)
+      : cuisines[dish.cuisine]++
+  );
+  return dishes.filter((dish) => cuisines[dish.cuisine] == 1);
+}
+
+console.log(problemThirteenWhatItActuallyAskedFor());
