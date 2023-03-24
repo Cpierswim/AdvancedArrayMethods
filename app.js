@@ -178,13 +178,38 @@ console.log(problemFour());
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
 
+function problemFive() {
+  return dishes.filter((dish) => dish.servings % 2 == 0);
+}
+
+console.log(problemFive());
+
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Double Hint: Research 'javascript does array include item'
 //Filter
 
+function problemSix() {
+  return dishes.filter((dish) => dish.ingredients.includes("chickpea"));
+}
+
+console.log(problemSix());
+
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
+
+function problemSeven() {
+  let ingredients = new Set();
+  dishes.forEach((dish) =>
+    dish.ingredients.forEach((ingredient) => ingredients.add(ingredient))
+  );
+  let choice = prompt(
+    `Choose an ingredient (Choices: ${Array.from(ingredients).join(", ")})`
+  ).toLowerCase();
+  return dishes.filter((dish) => dish.ingredients.includes(choice));
+}
+
+console.log(problemSeven());
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
