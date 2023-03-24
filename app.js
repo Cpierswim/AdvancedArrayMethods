@@ -230,6 +230,13 @@ function problemNine() {
 console.log(problemNine());
 
 //10. Create a function that will use advanced array methods on the 'dishes' array and return the result ["Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"]
+function problemTen() {
+  return dishes
+    .filter((dish) => dish.cuisine.toLowerCase() === "vegetarian")
+    .map((dish) => dish.cuisine + " " + dish.name);
+}
+
+console.log(problemTen());
 
 //BONUS
 
